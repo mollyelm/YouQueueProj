@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+    <style>
+    .nav {
+      display: flex;
+      justify-content: space-between; /* Space between logo and nav links */
+      align-items: center; /* Vertically center items */
+      background-color: white;
+      padding: 10px;
+      box-shadow: #999;
+    }
+
+    .nav header {
+      flex-grow: 1; 
+      text-align: center; 
+      margin-left: 200px;
+    }
+
+    .nav a {
+      border-radius: 12px;
+      color: black;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: larger;
+      transition: background-color 0.3s;
+    }
+
+    .nav a:hover {
+      background-color: #dbdbdb;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+        
+        body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f7f9fc;
+        color: #333;
+        line-height: 1.6;
+        
+        }
+        
+        .container {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+        padding-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+        }
+        
+        header h1 {
+        font-size: 3rem;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        border: 5px solid black;
+        border-radius: 15px;
+        display: inline-block;
+        background-color: #ff0033;
+        }
+
+    header h1 .black-text {
+        color: black; /* Style for "You" */
+    }
+
+    header h1 .white-text {
+    margin-left: -12px;
+        color: white; /* Style for "Tube" */
+    }
+    
+    .user-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    }
+    
+    .user-form input,
+    .user-form textarea,
+    .user-form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    
+    .user-form input:focus,
+    .user-form textarea:focus {
+    outline: none;
+    border-color: #1e90ff;
+    box-shadow: 0 0 4px rgba(30, 144, 255, 0.3);
+    }
+    
+    .user-form button {
+    background-color: #ff0033;;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    
+    .user-form button:hover {
+    background-color: darkred;
+    }
+    
+    .box {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+    }
+    
+    .box:hover {
+        transform: translateY(-5px);
+    }
+    
+    footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #999;
+    }
+</style>
+</head>
+    <body>
+        <div class="container">
+            <nav class="nav">
+                <header>
+                  <h1 id="you">
+                    <span class="black-text">You</span>
+                    <span class="white-text">Queue</span>
+                  </h1>
+                </header>
+                <div>
+                  <a href="/index">Home</a>
+                  <a href="/stats">Stats</a>
+                  <a href="/login">Logout</a>
+                </div>
+              </nav>
+        
+            <section>
+                <h2>Personal Stats</h2>
+                <div class="box">
+                    <strong>Username:</strong> <%= user %>
+                </div>
+                <br>
+                <div class="box">
+                    <strong>Minutes Queued:</strong> <%= minutes %>
+                </div>
+                <br>
+                <div class="box">
+                    <strong>Videos Watched:</strong> <%= videos %>
+                </div>
+                <br>
+                <div class="box">
+                    <strong>Longest Video Watched:</strong> <%= longestVideoWatched %>
+                </div>
+            </section>
+            
+        <footer>
+        <p>Made by Molly Moulton, Nader Atta-Allah, and Nikila Surapaneni</p>
+        <p>YouQueue &copy; 2024</p>
+        </footer>
+    </body>
+</html>
